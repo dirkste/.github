@@ -9,7 +9,7 @@
 ## Instructions
 1. **Red Phase**: 
    - Analyze the user's request.
-   - Write a failing test in the 	ests/ directory.
+   - Write a failing test in the `tests/` directory.
    - Run pytest to confirm failure (exit code != 0).
 2. **Green Phase**: 
    - Implement the minimal code in the source file.
