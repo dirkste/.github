@@ -5,13 +5,15 @@ Class TestHarness
     Private testCount
     Private passCount
     Private failCount
-    Private results
+    Private results()
+    Private resultIndex
     
     Private Sub Class_Initialize()
         testCount = 0
         passCount = 0
         failCount = 0
-        Set results = CreateObject("System.Collections.ArrayList")
+        resultIndex = 0
+        ReDim results(99)
     End Sub
     
     ' Assert that a condition is true
@@ -19,11 +21,12 @@ Class TestHarness
         testCount = testCount + 1
         If condition Then
             passCount = passCount + 1
-            results.Add "✓ PASS: " & message
+            results(resultIndex) = "✓ PASS: " & message
         Else
             failCount = failCount + 1
-            results.Add "✗ FAIL: " & message
+            results(resultIndex) = "✗ FAIL: " & message
         End If
+        resultIndex = resultIndex + 1
     End Sub
     
     ' Print test results summary
@@ -31,7 +34,7 @@ Class TestHarness
         Dim i
         WScript.Echo ""
         WScript.Echo "========== TEST RESULTS =========="
-        For i = 0 To results.Count - 1
+        For i = 0 To resultIndex - 1
             WScript.Echo results(i)
         Next
         WScript.Echo "=================================="
