@@ -24,8 +24,8 @@ tester.Assert IsPalindrome("RACECAR") = True, "should_return_true_when_checking_
 tester.Assert IsPalindrome("hello") = False, "should_return_false_when_checking_non_palindrome"
 
 ' Test CapitalizeWords
-tester.Assert CapitalizeWords("hello world") = "Hello World", "should_capitalize_each_word_in_sentence"
-tester.Assert CapitalizeWords("HELLO") = "Hello", "should_lowercase_after_capitalizing_first_letter"
+tester.Assert CapitalizeWords("hello world") = "Hello World", "should_capitalize_each_word_when_given_sentence"
+tester.Assert CapitalizeWords("HELLO") = "Hello", "should_lowercase_remaining_letters_when_capitalizing_word"
 
 ' Print results and exit
 tester.PrintResults()
