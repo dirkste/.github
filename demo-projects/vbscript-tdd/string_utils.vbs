@@ -26,10 +26,10 @@ Function CapitalizeWords(inputStr)
     result = ""
     For i = 0 To UBound(words)
         If Len(words(i)) > 0 Then
+            If Len(result) > 0 Then result = result & " "
             words(i) = UCase(Mid(words(i), 1, 1)) & LCase(Mid(words(i), 2))
+            result = result & words(i)
         End If
-        If i > 0 Then result = result & " "
-        result = result & words(i)
     Next
     CapitalizeWords = result
 End Function

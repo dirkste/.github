@@ -26,6 +26,10 @@ tester.Assert IsPalindrome("hello") = False, "should_return_false_when_checking_
 ' Test CapitalizeWords
 tester.Assert CapitalizeWords("hello world") = "Hello World", "should_capitalize_each_word_when_given_sentence"
 tester.Assert CapitalizeWords("HELLO") = "Hello", "should_lowercase_remaining_letters_when_capitalizing_word"
+tester.Assert CapitalizeWords("") = "", "should_return_empty_when_given_empty_string"
+tester.Assert CapitalizeWords("hello  world") = "Hello World", "should_handle_consecutive_spaces_correctly"
+tester.Assert CapitalizeWords("  hello  ") = "Hello", "should_handle_leading_and_trailing_spaces"
+tester.Assert CapitalizeWords("hello-world") = "Hello-world", "should_handle_special_characters"
 
 ' Print results and exit
 tester.PrintResults()
